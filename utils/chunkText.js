@@ -1,8 +1,15 @@
-exports.chunkText = (text, maxWords = 200) => {
-  const words = text.split(/\s+/);
+
+function chunkText(text, chunkSize = 200, overlap = 50) {
   const chunks = [];
-  for (let i = 0; i < words.length; i += maxWords) {
-    chunks.push(words.slice(i, i + maxWords).join(' '));
+  let start = 0;
+
+  while (start < text.length) {
+    const end = Math.min(start + chunkSize, text.length);
+    chunks.push(text.slice(start, end));
+    start += chunkSize - overlap; 
   }
+
   return chunks;
-};
+}
+
+module.exports = { chunkText };

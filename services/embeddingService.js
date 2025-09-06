@@ -106,7 +106,7 @@ exports.queryStore = async (query, topK = 3) => {
     url: CHROMA_URL,
   });
 
-  console.log(`🔍 Running similarity search for query: "${query}"`);
+  console.log(` Running similarity search for query: "${query}"`);
 
   const results = await store.similaritySearch(query, topK);
   return results.map((doc) => doc.pageContent).join("\n");

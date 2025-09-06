@@ -45,12 +45,12 @@ question = st.text_input("Enter your question")
 
 if st.button("Ask"):
     if not question:
-        st.warning("⚠️ Please enter a question first.")
+        st.warning(" Please enter a question first.")
     else:
         with st.spinner("Thinking..."):
             response = requests.post(f"{API_URL}/ask", json={"question": question})
             if response.status_code == 200:
-                st.write("### 💡 Answer:")
+                st.write("###  Answer:")
                 st.success(response.json().get("answer", "No answer found."))
             else:
                 st.error(f"Error: {response.text}")
