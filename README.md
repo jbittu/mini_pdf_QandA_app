@@ -40,7 +40,7 @@ The system uses:
 ---
 
 ## 📂 Project Structure
-
+```bash
 .
 ├── app.js                 
 ├── controllers/
@@ -57,7 +57,7 @@ The system uses:
 ├── uploads/                
 ├── .env                    
 └── README.md               
-
+```
 ---
 
 ## ⚙️ Setup Instructions
